@@ -1,0 +1,52 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Cursos - Daniel italo</title>
+{% endblock %}
+
+{% block links %}
+    <a href="https://discordapp.com/invite/gCRAFhc">Comunidade</a>
+    <a href="https://mail.google.com/mail/u/0/?ogbl#inbox">Email</a>
+    <a href="https://web.whatsapp.com/">Telefone</a>
+{% endblock %}
+
+{% block content %}
+
+    <div id="wrapper">
+        <h1>Cursos</h1>
+    </div>
+
+    <section class="cards-curso">
+        {% for item in items %}
+            <div class="card-curos" id="{{item.id}}">
+                <div class="logo">
+                    <img src=" https://skylab.rocketseat.com.br/static/{{item.id}}.svg" alt="">
+                </div>
+
+                <h1 class="titulo">{{item.titulo}}</h1>
+
+                <div class="card_curso-content">
+                    <p>{{item.tempo}}</p>
+                    <p>
+                        {{item.valor}}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+    </section>
+
+    <div class="modal_overlay ">
+        <div class="modal">
+            <a class="close-modal">
+                <i class="material-icons">close</i>
+            </a>
+
+            <div class="modal-content">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+{% endblock %}
